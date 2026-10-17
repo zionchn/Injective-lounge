@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-# Setting up the webhook to help transfer date from the db to a goodle sheet
+# Setting up the webhook to help transfer data from the db to a goodle sheet
 SHEET_WEBHOOK_URL = os.environ.get("SHEET_WEBHOOK_URL")
 SHEET_TOKEN = os.environ.get("SHEET_TOKEN")
 
