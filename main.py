@@ -38,7 +38,13 @@ def send_to_sheet(sub, address):
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
 
-# SQLAlchemy needs postgresql://
+
+# Context processor for dates and stuff
+@app.context_processor
+def inject_year():
+    return {"current_date": datetime.now().year}
+
+# use postgresql://, was sqlite before lol(still is but in the bg)
 db_url = os.environ.get("DATABASE_URL") or os.environ.get("POSTGRES_URL") or "sqlite:///lounge.db"
 
 # Force the psycopg2 driver for Postgres URLs
@@ -78,7 +84,7 @@ class Submission(db.Model):
 
 
 
-# Topic loader code
+# Topic loader code, fetches stuff from topics.txt and randomly assigns em
 TOPICS_FILE = os.path.join(app.root_path, "topics.txt")
 
 
@@ -180,6 +186,7 @@ def lookup():
 from urllib.parse import urlparse
 
 
+# Submit content page, but each user gates a unique page based on their wallet address
 @app.route("/wallet/<address>/submit", methods=["POST"])
 def submit_content(address):
     address = address.lower()
