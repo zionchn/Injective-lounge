@@ -1,0 +1,132 @@
+html, body {
+    height: 100%;
+}
+
+/* ---------- Background ---------- */
+body {
+    background-color: #0a0a0c;
+    /* Optional grain. Delete these two lines for a flat background. */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+}
+
+/* Only needed if bg-body-tertiary is still on your body.
+   Better: remove that class from your body_class block and delete this rule. */
+[data-bs-theme="dark"] {
+    --bs-tertiary-bg-rgb: 10, 10, 12;
+}
+
+/* ---------- Layout ---------- */
+.form-signin {
+    max-width: 550px;
+    padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+/* ---------- Text ---------- */
+.serif {
+    font-family: "Newsreader", Georgia, "Times New Roman", serif;
+}
+
+h1, h2, .h4 {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.lead, .text-body-secondary {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ---------- Card ---------- */
+.card-surface {
+    background: #131316;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.card-surface .d-block {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+/* ---------- Step badge ---------- */
+.step-badge {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    border-radius: 12px !important;   /* overrides rounded-circle */
+    font-size: 0.9rem;
+}
+
+/* ---------- Inputs ---------- */
+.card-surface .form-control {
+    background: #0e0e11;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border-radius: 20px;
+}
+
+.card-surface .form-control:focus {
+    background: #0e0e11;
+    border-color: rgba(106, 95, 232, 0.6);
+    box-shadow: 0 0 0 0.2rem rgba(106, 95, 232, 0.15);
+}
+
+.card-surface .form-floating > label {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+    --bs-btn-bg: #6a5fe8;
+    --bs-btn-border-color: #6a5fe8;
+    --bs-btn-hover-bg: #7a70ee;
+    --bs-btn-hover-border-color: #7a70ee;
+    --bs-btn-active-bg: #5a4fd6;
+    --bs-btn-active-border-color: #5a4fd6;
+    --bs-btn-focus-shadow-rgb: 106, 95, 232;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+}
+
+/* Outlined pill (optional) */
+.btn-pill {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;              /* match the .btn-primary rounding */
+    padding: 0.5rem 1.5rem;          /* same height as py-2 buttons */
+    font-weight: 500;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-pill:hover,
+.btn-pill:focus-visible {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.45);
+    color: #fff;
+    transform: translateY(-1px);     /* same lift as .btn-primary */
+}
+
+.btn-pill:active {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(0);
+}
+
+
+/*nav styling*/
+.nav-pills .nav-link {
+    --bs-nav-link-color: #fff;
+    --bs-nav-link-hover-color: rgba(255, 255, 255, 0.7);
+    transition: color 0.2s ease;
+}

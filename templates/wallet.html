@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}{{ wallet.address[:8] }}...{{ wallet.address[-6:] }}{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-grow-1 align-items-center justify-content-center py-4">
+    <main class="w-100 m-auto text-center" style="max-width: 550px;">
+        <h1 class="display-6 fw-bold mb-3">Welcome back, Ninja</h1>
+        <div class="card-surface p-4">
+            <p class="text-body-secondary small mb-1">Your wallet</p>
+            <code class="text-break">{{ wallet.address }}</code>
+            <p class="text-body-secondary small mt-3 mb-0">
+                Joined {{ wallet.created_at.strftime("%b %d, %Y") }}
+            </p>
+            <!--Show topic based on wallet address-->
+            <p class="text-body-secondary small mt-3 mb-1">Your content topic</p>
+            <h2 class="h5 mb-0">{{ wallet.topic }}</h2>
+
+            <!--The submit form-->
+            <form method="post" action="{{ url_for('submit_content', address=wallet.address) }}" class="mt-4 text-start">
+                <div class="form-floating mb-3">
+                    <input type="url" class="form-control" id="contentUrl" name="content_url"
+                           placeholder="https://..." required>
+                    <label for="contentUrl"><i>Link to your content</i></label>
+                </div>
+                <button class="btn btn-primary w-100 py-2" type="submit">Submit content</button>
+            </form>
+
+            <!--Show pas submissions, if any. Probably a future usecase-->
+            {% if wallet.submissions %}
+            <hr class="my-4">
+            <p class="text-body-secondary small mb-2">Your submissions</p>
+            <ul class="list-unstyled text-start small mb-0">
+                {% for s in wallet.submissions|sort(attribute="created_at", reverse=true) %}
+                <li class="text-break mb-1">
+                    <a href="{{ s.content_url }}" target="_blank" rel="noopener noreferrer">{{ s.content_url }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </main>
+</div>
+{% endblock %}

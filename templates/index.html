@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block body_class %}{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/interact.js') }}" defer></script>
+{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-grow-1 align-items-center justify-content-center py-4">
+    <main class="form-signin w-100 m-auto">
+        <form method="post" action="{{ url_for('home') }}">
+            <h1 class="display-5 fw-bold text-center mb-3">Welcome, Ninja</h1>
+            <p class="lead text-center text-body-secondary mb-4">This is the place for --- campaign</p>
+
+            <div class="card-surface rounded-4 p-4 mb-3">
+                <div class="d-flex align-items-center gap-3 mb-4"> <!--number 1 icon-->
+                    <span class="step-badge rounded-circle fw-bold d-flex align-items-center justify-content-center">1</span>
+                    <h2 class="h4 mb-0">Connect Wallet</h2>
+                </div>
+
+                <!--Connect wallet button-->
+                <button id="connectBtn" class="btn btn-primary w-100 py-2 mb-2" type="button">Connect Wallet</button>
+                <div id="walletStatus" class="small mb-3" role="status"></div>
+
+                <!--Can't connect a wallet-->
+                <span class="d-block mt-4 mb-3">Can't connect a wallet? Paste your address instead.</span>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="walletAddress" name="wallet" placeholder="inj.....">
+                    <label for="walletAddress"><i>Wallet address (inj...)</i></label>
+                </div>
+                <button class="btn btn-primary w-100 py-2" type="submit">Get my topic</button>
+                <button class="btn btn-pill w-100 mt-2" type="submit" formaction="{{ url_for('lookup') }}">
+                    Already registered? Check my topic
+                </button>
+            </div>
+        </form>
+    </main>
+</div>
+{% endblock %}

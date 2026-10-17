@@ -1,0 +1,4 @@
+Flask
+Flask-SQLAlchemy
+bootstrap-flask
+requests
