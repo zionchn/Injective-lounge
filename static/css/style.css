@@ -1,19 +1,14 @@
-html, body {
-    height: 100%;
+html {
+    min-height: 100%;
 }
 
 /* ---------- Background ---------- */
 body {
+    min-height: 100vh;
+    min-height: 100dvh;
     background-color: #0a0a0c;
-    /* Optional grain. Delete these two lines for a flat background. */
+    /* Optional grain. Delete the background-image line for a flat background. */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
-    background-attachment: fixed;
-}
-
-/* Only needed if bg-body-tertiary is still on your body.
-   Better: remove that class from your body_class block and delete this rule. */
-[data-bs-theme="dark"] {
-    --bs-tertiary-bg-rgb: 10, 10, 12;
 }
 
 /* ---------- Layout ---------- */
@@ -39,6 +34,22 @@ h1, h2, .h4 {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 
+/* Headings shrink on phones instead of overflowing */
+.display-5,
+.wallet-title {
+    font-size: clamp(1.75rem, 6vw, 3rem);
+}
+
+/* Long addresses, topics and links wrap instead of overflowing */
+.card-surface code {
+    word-break: break-all;
+}
+
+.card-surface h2,
+.card-surface a {
+    overflow-wrap: anywhere;
+}
+
 /* ---------- Card ---------- */
 .card-surface {
     background: #131316;
@@ -59,7 +70,7 @@ h1, h2, .h4 {
     flex-shrink: 0;
     background-color: rgba(255, 255, 255, 0.9);
     color: #000;
-    border-radius: 20px !important;   /* overrides rounded-circle */
+    border-radius: 50% !important;
     font-size: 0.9rem;
 }
 
@@ -69,16 +80,22 @@ h1, h2, .h4 {
     border: 1px solid rgba(255, 255, 255, 0.08);
     color: #fff;
     border-radius: 20px;
+    padding-left: 1.1rem;
+}
+
+.card-surface .form-floating > .form-control {
+    padding-left: 1.1rem;
+}
+
+.card-surface .form-floating > label {
+    color: rgba(255, 255, 255, 0.5);
+    padding-left: 1.1rem;
 }
 
 .card-surface .form-control:focus {
     background: #0e0e11;
     border-color: rgba(106, 95, 232, 0.6);
     box-shadow: 0 0 0 0.2rem rgba(106, 95, 232, 0.15);
-}
-
-.card-surface .form-floating > label {
-    color: rgba(255, 255, 255, 0.5);
 }
 
 /* ---------- Buttons ---------- */
@@ -104,8 +121,8 @@ h1, h2, .h4 {
     background: transparent;
     color: rgba(255, 255, 255, 0.88);
     border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 20px;              /* match the .btn-primary rounding */
-    padding: 0.5rem 1.5rem;          /* same height as py-2 buttons */
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
     font-weight: 500;
     transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
@@ -115,7 +132,7 @@ h1, h2, .h4 {
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(255, 255, 255, 0.45);
     color: #fff;
-    transform: translateY(-1px);     /* same lift as .btn-primary */
+    transform: translateY(-1px);
 }
 
 .btn-pill:active {
@@ -123,10 +140,96 @@ h1, h2, .h4 {
     transform: translateY(0);
 }
 
+/* ---------- Navbar ---------- */
+.navbar {
+    --bs-navbar-color: #fff;
+    --bs-navbar-hover-color: rgba(255, 255, 255, 0.7);
+    --bs-navbar-brand-color: rgba(255, 255, 255, 0.88);
+    --bs-navbar-brand-hover-color: #fff;
+}
 
-/*nav styling*/
-.nav-pills .nav-link {
-    --bs-nav-link-color: #fff;
-    --bs-nav-link-hover-color: rgba(255, 255, 255, 0.7);
-    transition: color 0.2s ease;
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(106, 95, 232, 0.25);
+}
+
+/* Folded panel on mobile */
+@media (max-width: 767.98px) {
+    .navbar-collapse {
+        background: #131316;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 20px;
+        margin-top: 0.75rem;
+        padding: 0.5rem 1rem 0.75rem;
+    }
+}
+
+/* ---------- Hamburger → X ---------- */
+.toggler-icon {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 18px;
+}
+
+.toggler-icon span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 2px;
+    transition: top 0.25s ease, transform 0.25s ease, opacity 0.2s ease;
+}
+
+.toggler-icon span:nth-child(1) { top: 0; }
+.toggler-icon span:nth-child(2) { top: 8px; }
+.toggler-icon span:nth-child(3) { top: 16px; }
+
+/* Open state: top and bottom bars meet in the middle and rotate, middle fades out */
+.navbar-toggler[aria-expanded="true"] .toggler-icon span:nth-child(1) {
+    top: 8px;
+    transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .toggler-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .toggler-icon span:nth-child(3) {
+    top: 8px;
+    transform: rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .toggler-icon span { transition: none; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 575.98px) {
+    .form-control {
+        font-size: 16px;                 /* stops iOS zooming in on focus */
+    }
+
+    .btn-primary,
+    .btn-pill {
+        padding-top: 0.75rem;            /* bigger tap targets */
+        padding-bottom: 0.75rem;
+    }
+
+    .card-surface {
+        border-radius: 22px;
+    }
+}
+
+/* No sticky "lifted" buttons after a tap on touch screens */
+@media (hover: none) {
+    .btn-primary:hover,
+    .btn-pill:hover {
+        transform: none;
+    }
 }
