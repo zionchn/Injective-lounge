@@ -2,3 +2,4 @@ Flask
 Flask-SQLAlchemy
 bootstrap-flask
 requests
+psycopg2-binary
