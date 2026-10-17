@@ -38,7 +38,7 @@ def send_to_sheet(sub, address):
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
 
-# Adding postgresql://
+# SQLAlchemy needs postgresql://
 db_url = os.environ.get("DATABASE_URL", "sqlite:///lounge.db")
 if db_url.startswith("postgres://"):
     db_url = db_url.replace("postgres://", "postgresql://", 1)

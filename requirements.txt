@@ -1,6 +1,6 @@
-Flask
-Flask-SQLAlchemy
+flask
 bootstrap-flask
-requests
+flask-sqlalchemy
 psycopg2-binary
+requests
 python-dotenv
