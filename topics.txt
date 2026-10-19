@@ -1,8 +1,57 @@
-Why Injective is built for onchain finance
-Injective's MultiVM: EVM and CosmWasm together
-Explain the INJ burn auction in simple terms
-How to trade perps on Injective
-Staking INJ: a beginner's guide
-Injective vs other L1s for derivatives
-Building your first dApp on Injective
-What makes Injective fast and cheap
+Compare Injective to Ethereum and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Solana and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Stellar and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Avalanche and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Arbitrum and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Base and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Polygon and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Mantra and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Aptos and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Sui and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Plume Network and tweet your thesis on why you would choose Injective.
+
+Compare Injective to BNB Chain and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Algorand and tweet your thesis on why you would choose Injective.
+
+Compare Injective to XRP Ledger and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Hedera and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Canton Network and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Provenance Blockchain and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Realio Network and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Creditcoin and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Polymesh and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Chintai and tweet your thesis on why you would choose Injective.
+
+Compare Injective to XDC Network and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Robinhood Chain and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Sei and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Near Protocol and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Mantle and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Noble and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Chromia and tweet your thesis on why you would choose Injective.
+
+Compare Injective to Monad and tweet your thesis on why you would choose Injective.

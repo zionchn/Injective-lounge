@@ -14,6 +14,7 @@
 
             <p class="text-body-secondary small mt-3 mb-1">Your content topic</p>
             <h2 class="h5 mb-0">{{ wallet.topic }}</h2>
+            <p class="fst-italic text-body-secondary small mb-0">(No unnecessarily long posts, please)</p>
 
             <form method="post" action="{{ url_for('submit_content', address=wallet.address) }}" class="mt-4 text-start">
                 <div class="form-floating mb-3">
