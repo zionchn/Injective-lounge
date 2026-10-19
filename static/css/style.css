@@ -151,6 +151,7 @@ h1, h2, .h4 {
 .navbar-toggler {
     border-color: rgba(255, 255, 255, 0.25);
     border-radius: 12px;
+    padding: 0.75rem 0.75rem;
 }
 
 .navbar-toggler:focus {
