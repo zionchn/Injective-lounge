@@ -14,6 +14,25 @@
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     {% endblock %}
     <title>{% block title %}My App{% endblock %}</title>
+
+    <!--Add opengraph meta tags for previews-->
+    {% block meta %}
+    <meta name="description" content="Get your Injective content topic and submit your post.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Injective Lounge">
+    <meta property="og:title" content="Injective Lounge">
+    <meta property="og:description" content="Get your Injective content topic and submit your post.">
+    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:image" content="{{ url_for('static', filename='images/open-graph-img.jpeg', _external=True) }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Injective Lounge">
+    <meta name="twitter:description" content="Get your Injective content topic and submit your post.">
+    <meta name="twitter:image" content="{{ url_for('static', filename='open-graph-img.jpeg', _external=True) }}">
+    {% endblock %}
 </head>
 <body class="d-flex flex-column min-vh-100 {% block body_class %}{% endblock %}">
 
