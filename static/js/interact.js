@@ -95,7 +95,6 @@
         const mm = getMetaMask();
         if (mm) list.push({ name: "MetaMask", connect: () => connectMetaMask(mm) });
         if (window.keplr) list.push({ name: "Keplr", connect: () => connectCosmos(window.keplr) });
-        if (window.leap) list.push({ name: "Leap", connect: () => connectCosmos(window.leap) });
         return list;
     }
 
@@ -142,7 +141,7 @@
         const wallets = detectWallets();
 
         if (wallets.length === 0) {
-            setStatus("No wallet found. Install MetaMask, Keplr or Leap, or paste your address below.", true);
+            setStatus("No wallet found. Install MetaMask or Keplr, or paste your address below.", true);
             return;
         }
         if (wallets.length === 1) {
@@ -180,7 +179,7 @@
                 });
             } catch (e) { /* not supported on some versions; the page still disconnects below */ }
         }
-        clearConnection("Disconnected. Keplr and Leap can only be removed from inside the extension.");
+        clearConnection("Disconnected. Keplr can only be removed from inside the extension.");
     });
 
     // Follow MetaMask if the user disconnects or switches account inside it

@@ -235,3 +235,30 @@ h1, h2, .h4 {
     }
 }
 
+/* ---------- Icon button (disconnect) ---------- */
+.btn.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 50%;
+    line-height: 1;
+}
+
+.btn.btn-icon img {
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+}
+
+@media (max-width: 575.98px) {
+    .btn.btn-icon {
+        padding: 0;
+        width: 46px;
+        height: 46px;
+    }
+}
