@@ -1,5 +1,6 @@
 html {
     min-height: 100%;
+    color-scheme: dark;
 }
 
 /* ---------- Background ---------- */
@@ -26,7 +27,7 @@ body {
     font-family: "Newsreader", Georgia, "Times New Roman", serif;
 }
 
-h1, h2, .h4 {
+h1, h2, .h4, .h5 {
     color: rgba(255, 255, 255, 0.88);
 }
 
